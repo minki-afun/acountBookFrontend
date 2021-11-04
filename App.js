@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Image } from 'react-native'
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -13,13 +13,14 @@ const App = () => {
 
   const [isLoading, setIsLoading] = useState(true)
   useEffect( async () => {
-    setTimeout(() => {setIsLoading(false)}, 5000)
+    setTimeout(() => {setIsLoading(false)}, 3000)
   })
   
   if (isLoading) {
     return (
-      <View>
-        <Text style={{flex:1, justifyContent:'center',alignItems:'center', fontSize:20}}>Loading</Text>
+      <View style={{flex:1, justifyContent:'center', alignItems:"center"}}>
+        <Image source={require("./assets/money.png")} style={{width: 40, height: 40}}/>
+        <Text >Loading</Text>
       </View>
     )
   } else {

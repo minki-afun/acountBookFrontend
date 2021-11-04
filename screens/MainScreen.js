@@ -8,8 +8,8 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 import { createHttpLink } from 'apollo-link-http'
 import { ApolloProvider } from '@apollo/react-hooks'
 
-import { ContentTab } from '../components/AppTabNavigator'
-import { UserTab } from '../components/AppTabNavigator'
+import ContentTab from './ContentTab'
+import UserTab from './UserTab'
 
 const Tab = createBottomTabNavigator();
 
@@ -17,10 +17,11 @@ const Tabs = () => {
 
   return (
     <Tab.Navigator
+      initialRouteName="ContentTab"
       screenOptions={({route}) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-          return <Image source={require("../assets/icon1.png")} style={{width: 40, height: 40}}/>
-        },
+        // tabBarIcon: ({ focused, color, size }) => {
+        //   return <Image source={require("../assets/icon1.png")} style={{width: 40, height: 40}}/>
+        // },
         tabBarActiveTintColor: 'red',
         tabBarInactiveTintColor: 'black',
       })}
@@ -28,10 +29,20 @@ const Tabs = () => {
       <Tab.Screen 
         name="가계부 기록" 
         component={ContentTab} 
+        options={{
+          tabBarIcon: ({ focused, color, size }) => {
+            return <Image source={require("../assets/icon2.png")} style={{width: 40, height: 40}}/>
+          }
+        }}
       />
       <Tab.Screen 
         name="사용자" 
         component={UserTab} 
+        options={{
+          tabBarIcon: () => {
+            return  <Image source={require("../assets/icon1.png")} style={{width: 40, height: 40}}/>
+          }
+        }}
       />
     </Tab.Navigator>
   )
