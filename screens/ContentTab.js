@@ -95,7 +95,7 @@ const ContentTab = () => {
       </Wrapper>
       <Card>
         <Button title="add" onPress={() => Submit()}>
-          <Icon name="add-circle" size={30} color="tomato"/> 
+          <Icon name="add-circle" size={30} color="tomato" />
         </Button>
       </Card>
     </Container>
