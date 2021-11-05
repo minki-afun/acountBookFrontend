@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { View, Text, StyleSheet, Button } from "react-native"
+import Icon from "react-native-ionicons"
 
 import styled from "styled-components"
 
@@ -93,7 +94,9 @@ const ContentTab = () => {
         </WrapperInner>
       </Wrapper>
       <Card>
-        <Button title="추가" onPress={() => Submit()}></Button>
+        <Button title="add" onPress={() => Submit()}>
+          <Icon name="add-circle" size={30} color="tomato"/> 
+        </Button>
       </Card>
     </Container>
   )
