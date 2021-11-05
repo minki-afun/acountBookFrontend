@@ -14,9 +14,9 @@ import styled from "styled-components"
 const LOGIN_SEND = gql`
   mutation login($email: String, $password: String) {
     login(email: $email, password: $password) {
-      ok
       token
       result
+      error
     }
   }
 `
@@ -33,12 +33,15 @@ const LoginScreen = () => {
   })
 
   const Submit = async () => {
+    console.log("로그인 시도")
     if (email != "" || password != "") {
       const data = await addLogin({ variables: { email, password } })
+      console.log(data)
       if (data.result) {
         console.log(data.token)
+        console.log("로그인 성공")
       } else {
-        error = true
+        console.log("로그인 실패")
       }
     }
     setEmail("")

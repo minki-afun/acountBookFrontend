@@ -1,11 +1,11 @@
 import React, { Component } from "react"
-import { View, Text, StyleSheet,Button } from "react-native"
+import { View, Text, StyleSheet, Button } from "react-native"
 
 import styled from "styled-components"
 
 const Container = styled.View`
   flex: 1;
-  backgroundColor: #444444;
+  background-color: #444444;
 `
 const Wrapper = styled.View`
   margin-top: 30;
@@ -23,7 +23,7 @@ const WrapperInner = styled.View`
 
 const AppTitle = styled.Text`
   color: #fff;
-  fontSize: 18;
+  font-size: 18;
   font-weight: 500;
 `
 const AppSub1 = styled.Text`
@@ -33,12 +33,12 @@ const AppSub1 = styled.Text`
   text-align: center;
   justify-content: center;
   font-weight: 500;
-  fontSize: 18;
+  font-size: 18;
 `
 const AppSub2 = styled.Text`
-  fontSize: 18;
+  font-size: 18;
   font-weight: 500;
-  color: #0000FF;
+  color: #0000ff;
   margin-bottom: 10;
   margin-top: 7;
   text-align: center;
@@ -46,7 +46,7 @@ const AppSub2 = styled.Text`
 `
 const AppSub3 = styled.Text`
   margin-top: 7;
-  fontSize: 18;
+  font-size: 18;
   font-weight: 500;
   text-align: center;
   justify-content: center;
@@ -56,10 +56,10 @@ const AppSub3 = styled.Text`
 const Card = styled.View`
   background-color: #fff;
   flex: 2;
-  borderTopLeftRadius: 10;
-  borderTopRightRadius: 10;
-  marginRight: 10;
-  marginLeft: 10;
+  border-top-left-radius: 10;
+  border-top-right-radius: 10;
+  margin-right: 10;
+  margin-left: 10;
 `
 const AddButton = styled.Button`
   flex: 1;
@@ -93,7 +93,7 @@ const ContentTab = () => {
         </WrapperInner>
       </Wrapper>
       <Card>
-        <Button title="추가" onPress={()=>Submit()}></Button>
+        <Button title="추가" onPress={() => Submit()}></Button>
       </Card>
     </Container>
   )
