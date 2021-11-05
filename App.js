@@ -30,15 +30,6 @@ const App = () => {
     return (
       <NavigationContainer>
         <MainScreen />
-        {/* <Stack.Navigator initialRouteName="Main">
-          <Stack.Screen 
-            name="Main" 
-            component={MainScreen}
-            options={{
-              title: "가계부"
-            }}
-          />
-        </Stack.Navigator> */}
       </NavigationContainer>
     )
   }
