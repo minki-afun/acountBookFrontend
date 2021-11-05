@@ -1,28 +1,31 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
+import React, { useCallback, useEffect, useState } from "react"
+import { StyleSheet, Text, View, Image } from "react-native"
 
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
+import { NavigationContainer } from "@react-navigation/native"
+import { createStackNavigator } from "@react-navigation/stack"
 
+import MainScreen from "./screens/MainScreen"
+import Loading from "./components/Loading"
 
-import MainScreen from './screens/MainScreen'
-
-const Stack = createStackNavigator();
+const Stack = createStackNavigator()
 
 const App = () => {
-
+  // 로딩화면 세팅
   const [isLoading, setIsLoading] = useState(true)
-  useEffect( async () => {
-    setTimeout(() => {setIsLoading(false)}, 3000)
+
+  useEffect(async () => {
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 3000)
   })
-  
+
+  // useEffect( async () => {
+
+  // })
+
+  // 로딩중일때
   if (isLoading) {
-    return (
-      <View style={{flex:1, justifyContent:'center', alignItems:"center"}}>
-        <Image source={require("./assets/money.png")} style={{width: 40, height: 40}}/>
-        <Text >Loading</Text>
-      </View>
-    )
+    return <Loading />
   } else {
     return (
       <NavigationContainer>
