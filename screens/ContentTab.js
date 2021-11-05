@@ -1,18 +1,11 @@
-import { Button, Center } from "native-base"
 import React, { Component } from "react"
-import { View, Text, StyleSheet } from "react-native"
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome"
-import {
-  faCalculator,
-  faCoffee,
-  faPlus,
-  faPlusSquare,
-} from "@fortawesome/free-solid-svg-icons"
+import { View, Text, StyleSheet,Button } from "react-native"
+
 import styled from "styled-components"
 
 const Container = styled.View`
   flex: 1;
-  backgroundcolor: #444444;
+  backgroundColor: #444444;
 `
 const Wrapper = styled.View`
   margin-top: 30;
@@ -20,7 +13,6 @@ const Wrapper = styled.View`
   margin-left: 30;
   margin-right: 30;
   flex-direction: row;
-  // justify-Content:center;
   justify-content: space-between;
   text-align: center;
 `
@@ -31,25 +23,22 @@ const WrapperInner = styled.View`
 
 const AppTitle = styled.Text`
   color: #fff;
-  fontsize: 18;
+  fontSize: 18;
   font-weight: 500;
-  // text-Align: center;
-  // justify-Content:center;
-  // letter-Spacing: 5;
 `
 const AppSub1 = styled.Text`
-  color: red;
+  color: tomato;
   margin-bottom: 10;
+  margin-top: 7;
   text-align: center;
   justify-content: center;
   font-weight: 500;
-  fontsize: 18;
-  margin-top: 7;
+  fontSize: 18;
 `
 const AppSub2 = styled.Text`
-  fontsize: 18;
+  fontSize: 18;
   font-weight: 500;
-  color: blue;
+  color: #0000FF;
   margin-bottom: 10;
   margin-top: 7;
   text-align: center;
@@ -57,7 +46,7 @@ const AppSub2 = styled.Text`
 `
 const AppSub3 = styled.Text`
   margin-top: 7;
-  fontsize: 18;
+  fontSize: 18;
   font-weight: 500;
   text-align: center;
   justify-content: center;
@@ -67,16 +56,15 @@ const AppSub3 = styled.Text`
 const Card = styled.View`
   background-color: #fff;
   flex: 2;
-  bordertopleftradius: 10;
-  bordertoprightradius: 10;
-  marginright: 10;
-  marginleft: 10;
+  borderTopLeftRadius: 10;
+  borderTopRightRadius: 10;
+  marginRight: 10;
+  marginLeft: 10;
 `
 const AddButton = styled.Button`
   flex: 1;
-  padding: 0.375rem 0.75rem;
-  border-radius: 0.25rem;
-  font-szie: 1rem;
+  border-radius: 0.25;
+  font-size: 1;
 `
 
 const ContentTab = () => {
@@ -104,7 +92,9 @@ const ContentTab = () => {
           <AppSub3>0</AppSub3>
         </WrapperInner>
       </Wrapper>
-      <Card></Card>
+      <Card>
+        <Button title="추가" onPress={()=>Submit()}></Button>
+      </Card>
     </Container>
   )
 }

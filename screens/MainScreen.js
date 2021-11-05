@@ -38,15 +38,17 @@ const Tabs = () => {
   }
   console.log(data)
 
-  if (!data) {
-    return (
-      <ViewContainer>
-        <LoginScreen />
-      </ViewContainer>
-    )
-  }
-
-  if (data) {
+  // if (!data) {
+  //   return (
+  //     <ViewContainer>
+  //       <LoginScreen />
+  //     </ViewContainer>
+  //   )
+  // }
+  // =================================== 나중에 풀어야함
+  
+  // if (data) {
+    // =================================== 나중에 풀어야함
     return (
       <Tab.Navigator
         initialRouteName="ContentTab"
@@ -89,7 +91,7 @@ const Tabs = () => {
       </Tab.Navigator>
     )
   }
-}
+// }
 
 const client = new ApolloClient({
   link: createHttpLink({ uri: "http://localhost:4000" }),
