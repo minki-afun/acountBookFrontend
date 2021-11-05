@@ -1,13 +1,6 @@
 import { Button, Center } from "native-base"
 import React, { Component } from "react"
 import { View, Text, StyleSheet } from "react-native"
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome"
-import {
-  faCalculator,
-  faCoffee,
-  faPlus,
-  faPlusSquare,
-} from "@fortawesome/free-solid-svg-icons"
 import styled from "styled-components"
 
 const Container = styled.View`
@@ -20,7 +13,7 @@ const Wrapper = styled.View`
   margin-left: 30;
   margin-right: 30;
   flex-direction: row;
-  // justify-Content:center;
+  justify-content: center;
   justify-content: space-between;
   text-align: center;
 `
@@ -33,9 +26,9 @@ const AppTitle = styled.Text`
   color: #fff;
   fontsize: 18;
   font-weight: 500;
-  // text-Align: center;
-  // justify-Content:center;
-  // letter-Spacing: 5;
+  text-align: center;
+  justify-content: center;
+  letter-spacing: 5;
 `
 const AppSub1 = styled.Text`
   color: red;
@@ -76,7 +69,7 @@ const AddButton = styled.Button`
   flex: 1;
   padding: 0.375rem 0.75rem;
   border-radius: 0.25rem;
-  font-szie: 1rem;
+  /* font-szie: 1rem; */
 `
 
 const ContentTab = () => {
