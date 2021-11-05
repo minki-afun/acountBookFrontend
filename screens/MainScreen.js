@@ -18,8 +18,11 @@ import Loading from "../components/Loading"
 const IS_LOGIN = gql`
   query {
     isLogin {
-      id
-      email
+      result
+      user {
+        id
+        email
+      }
     }
   }
 `
@@ -36,18 +39,18 @@ const Tabs = () => {
       </View>
     )
   }
-  console.log(data)
 
-  // if (!data) {
-  //   return (
-  //     <ViewContainer>
-  //       <LoginScreen />
-  //     </ViewContainer>
-  //   )
-  // }
+  if (!data) {
+    return (
+      <ViewContainer>
+        <LoginScreen />
+      </ViewContainer>
+    )
+  }
   // =================================== 나중에 풀어야함
-  
-  // if (data) {
+
+  if (data) {
+    console.log(data)
     // =================================== 나중에 풀어야함
     return (
       <Tab.Navigator
@@ -91,7 +94,7 @@ const Tabs = () => {
       </Tab.Navigator>
     )
   }
-// }
+}
 
 const client = new ApolloClient({
   link: createHttpLink({ uri: "http://localhost:4000/graphql" }),

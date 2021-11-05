@@ -12,7 +12,7 @@ import {
 import styled from "styled-components"
 
 const LOGIN_SEND = gql`
-  mutation login($email: String, $password: String) {
+  mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
       token
       result
@@ -21,7 +21,7 @@ const LOGIN_SEND = gql`
   }
 `
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
@@ -36,10 +36,10 @@ const LoginScreen = () => {
     console.log("로그인 시도")
     if (email != "" || password != "") {
       const data = await addLogin({ variables: { email, password } })
-      console.log(data)
-      if (data.result) {
-        console.log(data.token)
+      console.log(data.data)
+      if (data.data) {
         console.log("로그인 성공")
+        navigation.navigate("ContentTab")
       } else {
         console.log("로그인 실패")
       }
